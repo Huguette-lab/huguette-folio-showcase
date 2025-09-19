@@ -10,13 +10,18 @@ const Navigation = () => {
     { label: "Experience", href: "#experience" },
     { label: "Timeline", href: "#timeline" },
     { label: "Projects", href: "#projects" },
+    { label: "Leadership Essay", href: "/leadership", isRoute: true },
     { label: "Contact", href: "#contact" },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const handleNavigation = (item: typeof navItems[0]) => {
+    if (item.isRoute) {
+      window.location.href = item.href;
+    } else {
+      const element = document.querySelector(item.href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
     setIsOpen(false);
   };
@@ -34,7 +39,7 @@ const Navigation = () => {
             {navItems.map((item) => (
               <button
                 key={item.label}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => handleNavigation(item)}
                 className="text-foreground hover:text-primary transition-colors duration-300"
               >
                 {item.label}
@@ -43,7 +48,10 @@ const Navigation = () => {
             <Button 
               variant="default" 
               className="bg-gradient-primary text-primary-foreground shadow-elegant"
-              onClick={() => scrollToSection("#contact")}
+              onClick={() => {
+                const element = document.querySelector("#contact");
+                if (element) element.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               Get In Touch
             </Button>
@@ -67,7 +75,7 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <button
                   key={item.label}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => handleNavigation(item)}
                   className="text-left text-foreground hover:text-primary transition-colors duration-300"
                 >
                   {item.label}
@@ -76,7 +84,10 @@ const Navigation = () => {
               <Button 
                 variant="default" 
                 className="bg-gradient-primary text-primary-foreground shadow-elegant self-start"
-                onClick={() => scrollToSection("#contact")}
+                onClick={() => {
+                  const element = document.querySelector("#contact");
+                  if (element) element.scrollIntoView({ behavior: "smooth" });
+                }}
               >
                 Get In Touch
               </Button>
