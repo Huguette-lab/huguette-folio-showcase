@@ -66,7 +66,7 @@ const About = () => {
                 </div>
               </Card>
 
-              <Card className="p-6 shadow-card">
+              {/* <Card className="p-6 shadow-card">
                 <h3 className="text-xl font-semibold text-foreground mb-4">Languages</h3>
                 <div className="space-y-3">
                   {languages.map((lang) => (
@@ -78,7 +78,7 @@ const About = () => {
                     </div>
                   ))}
                 </div>
-              </Card>
+              </Card> */}
             </div>
           </div>
         </div>
