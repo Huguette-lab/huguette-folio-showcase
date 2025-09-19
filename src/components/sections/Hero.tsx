@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { MapPin, Mail, Phone, ExternalLink } from "lucide-react";
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -25,8 +24,15 @@ const Hero = () => {
                 Entrepreneurial Leader & Digital Innovation Specialist
               </p>
               <p className="text-lg text-muted-foreground max-w-lg">
-                Passionate about creating accessible digital solutions that drive positive change. 
-                Experienced in financial technology, data management, and mental health advocacy.
+                My name is Huguette Igihozo, and I am passionate about mental
+                health and how awareness can transform communities. I enjoy
+                exploring solutions that connect education, sustainability, job
+                creation, and leadership to make a positive impact. One thing
+                I’m proud of is how I always stay committed to learning and
+                improving myself, whether through school projects, teamwork, or
+                personal growth. A fun fact about me is that I love imagining
+                how the future could look and creating ideas that help people
+                thrive.
               </p>
             </div>
 
@@ -49,42 +55,35 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Contact Card */}
+          {/* Photo Section */}
           <div className="flex justify-center lg:justify-end">
-            <Card className="p-8 shadow-card hover:shadow-elegant transition-all duration-300 bg-card">
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-foreground mb-6">Contact Information</h3>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-primary" />
-                    <span className="text-foreground">+250 799316512</span>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-primary" />
-                    <span className="text-foreground">h.igihozo@alustudent.com</span>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="w-5 h-5 text-primary" />
-                    <span className="text-foreground">Kigali, Rwanda</span>
-                  </div>
-                </div>
+            <div className="relative group">
+              {/* Decorative background elements */}
+              <div className="absolute -inset-4 bg-gradient-primary rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+              <div className="absolute -inset-2 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500"></div>
 
-                <div className="pt-4 border-t border-border">
-                  <a
-                    href="https://www.linkedin.com/in/huguette-igihozo-213009279"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    <span>LinkedIn Profile</span>
-                  </a>
+              {/* Main photo container */}
+              <Card className="relative p-2 shadow-elegant hover:shadow-2xl transition-all duration-500 bg-card/80 backdrop-blur-sm border-0 overflow-hidden group-hover:scale-105">
+                <div className="relative overflow-hidden rounded-xl">
+                  <img
+                    src="/photo.jpg"
+                    alt="Huguette Igihozo - Entrepreneurial Leader"
+                    className="w-80 h-96 object-cover rounded-xl group-hover:scale-110 transition-transform duration-700"
+                  />
+
+                  {/* Overlay gradient for depth */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  {/* Floating elements */}
+                  <div className="absolute top-4 right-4 w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                  <div className="absolute bottom-4 left-4 w-2 h-2 bg-secondary rounded-full animate-pulse delay-300"></div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+
+              {/* Floating accent elements */}
+              <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-primary rounded-full opacity-60 animate-bounce"></div>
+              <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-secondary rounded-full opacity-40 animate-bounce delay-500"></div>
+            </div>
           </div>
         </div>
       </div>
