@@ -6,14 +6,16 @@ import { ExternalLink, Github, Globe, Heart, CreditCard, BarChart3 } from "lucid
 const Projects = () => {
   const projects = [
     {
-      title: "BPR Bank Online Withdrawal System",
+      title: "EasyCash - Online Banking Solution",
       company: "Banque Populaire du Rwanda (BPR)",
       period: "Jan 2024 - Mar 2024",
-      description: "Developed an innovative online withdrawal system to eliminate physical queues at bank branches. The solution streamlined customer experience by allowing secure online withdrawal requests, significantly reducing wait times and improving operational efficiency.",
+      description: "Developed EasyCash, an innovative online withdrawal system to eliminate physical queues at bank branches. The solution streamlined customer experience by allowing secure online withdrawal requests, significantly reducing wait times and improving operational efficiency.",
       technologies: ["Digital Banking", "Customer Experience", "Process Optimization", "Security Systems"],
       impact: "Reduced customer wait times by 70% and improved branch operational efficiency",
       icon: <CreditCard className="w-6 h-6" />,
-      type: "FinTech Solution"
+      type: "FinTech Solution",
+      liveUrl: "https://precise-corn-f3wvxb.mystrikingly.com/",
+      featured: true
     },
     {
       title: "Hotel Financial Management System",
@@ -23,17 +25,21 @@ const Projects = () => {
       technologies: ["Financial Systems", "Data Analytics", "Cash Flow Management", "Reporting"],
       impact: "Improved financial accuracy by 95% and streamlined reporting processes",
       icon: <BarChart3 className="w-6 h-6" />,
-      type: "Financial Technology"
+      type: "Financial Technology",
+      liveUrl: null,
+      featured: false
     },
     {
-      title: "Accessible Mental Health Platform",
+      title: "Mind Care - Accessible Mental Health Platform",
       company: "Independent Project",
       period: "2024 - Present",
-      description: "Creating an innovative digital platform to make mental health services more affordable and accessible in Rwanda. The platform connects users with qualified mental health professionals and provides resources for mental wellness education and support.",
+      description: "Created Mind Care, an innovative digital platform to make mental health services more affordable and accessible in Rwanda. The platform connects users with qualified mental health professionals and provides resources for mental wellness education and support.",
       technologies: ["Healthcare Technology", "Accessibility Design", "Community Building", "Telehealth"],
       impact: "Aiming to reduce mental health service costs by 60% and increase accessibility",
       icon: <Heart className="w-6 h-6" />,
-      type: "Social Impact"
+      type: "Social Impact",
+      liveUrl: "https://industrious-platypus-f3wvx0.mystrikingly.com/",
+      featured: true
     }
   ];
 
@@ -115,12 +121,22 @@ const Projects = () => {
 
                     {/* Action Buttons */}
                     <div className="flex gap-3">
+                      {project.liveUrl && (
+                        <Button 
+                          className="bg-gradient-primary text-primary-foreground shadow-elegant hover:shadow-xl"
+                          size="sm"
+                          onClick={() => window.open(project.liveUrl, "_blank")}
+                        >
+                          <Globe className="w-4 h-4 mr-2" />
+                          View Live Project
+                        </Button>
+                      )}
                       <Button 
                         variant="outline" 
                         size="sm"
                         className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                       >
-                        <Globe className="w-4 h-4 mr-2" />
+                        <ExternalLink className="w-4 h-4 mr-2" />
                         Learn More
                       </Button>
                     </div>
@@ -132,9 +148,9 @@ const Projects = () => {
 
           <div className="mt-12 text-center">
             <Card className="p-6 bg-gradient-primary text-primary-foreground shadow-elegant inline-block">
-              <h3 className="text-xl font-semibold mb-2">Innovation Focus</h3>
+              <h3 className="text-xl font-semibold mb-2">Live Applications</h3>
               <p className="text-sm opacity-90">
-                3 Major Projects • FinTech • Healthcare • Social Impact • 2024-2025
+                2 Live Projects • EasyCash Banking • Mind Care Mental Health • 2024-2025
               </p>
             </Card>
           </div>
